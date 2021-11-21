@@ -1,0 +1,1048 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+// @import "~angular-material/modules/layouts/angular-material.layouts.css";
+// @import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+// @import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "stylesConstants";
+@import "./icon.scss";
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-display: swap;
+  font-family: BelweSansLight;
+  src: url(https://files.y.jewelry/assets/fonts/BelweSans-Light.otf);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: Apercu;
+  src: url(https://files.y.jewelry/assets/fonts/Apercu.otf);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: ApercuMedium;
+  src: url(https://files.y.jewelry/assets/fonts/Apercu-Medium.otf);
+}
+
+@font-face {
+  font-display: swap;
+  font-family: ApercuLight;
+  src: url(https://files.y.jewelry/assets/fonts/Apercu-Light.otf);
+}
+@font-face {
+  font-display: swap;
+  font-family: Belvue;
+  src: url(https://files.y.jewelry/assets/fonts/BelweSans-Light.otf);
+}
+@font-face {
+  font-display: swap;
+  font-family: Seville;
+  src: url(https://files.y.jewelry/assets/fonts/Seville+Script.otf);
+}
+body.jw-modal-open {
+  /* body overflow is hidden to hide main scrollbar when modal window is open */
+  overflow: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  color: #090954;
+  font-family: ApercuLight;
+  font-size: 14px;
+  line-height: 1.42857143;
+  background-color: $background-color-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  background-color: transparent;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  color: #ccc;
+  content: "/\00a0";
+}
+.rounded_btn {
+  background-color: #bfd1e8;
+  color: #090954;
+  height: 38px;
+  line-height: 38px;
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.apercu-light {
+  font-family: ApercuLight;
+}
+
+.btn-dark {
+  background-color: #090954;
+  color: #bfd1e8;
+  border-radius: 3px;
+  height: 40px;
+  text-transform: uppercase;
+  padding: 12px;
+  max-width: 450px;
+}
+
+.btn-light {
+  background-color: #ffffff;
+  color: #090954;
+  border-radius: 3px;
+  height: 40px;
+  text-transform: uppercase;
+  border: 1px solid #090954;
+  box-sizing: border-box;
+  padding: 12px;
+  max-width: 450px;
+}
+
+.btn-light-no-border {
+  background-color: #ffffff;
+  color: #090954;
+  border-radius: 3px;
+  border-color: #ffffff;
+  height: 40px;
+  text-transform: uppercase;
+  max-width: 450px;
+  font-family: Apercu;
+  font-size: 12px;
+  line-height: 12px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.help {
+  background-color: #ffffff;
+  color: #090954;
+  border-radius: 3px;
+  height: 70px;
+  border: 1px solid #bfd1e8;
+  box-sizing: border-box;
+  padding: 6px;
+  max-width: 260px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+// .dropdownSelectedFieldList {
+//   opacity: 0;
+//   position: absolute;
+//   z-index: 2147483648;
+//   visibility: hidden;
+//   cursor: pointer;
+//   background: #fff;
+// }
+// .dropdownSelectedFieldList.active {
+//   opacity: 1;
+//   margin-top: 22px;
+//   visibility: visible;
+//   margin-left: 175px;
+// }
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.addedToBag {
+  background-color: #fff;
+  top: 60px;
+  left: calc(50vw - 200px) !important;
+  transition: 1s cubic-bezier(0.4, 0, 0, 1);
+  text-align: center !important;
+  font-family: Belvue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #090954;
+  padding: 30px;
+  z-index: 9999999;
+  width: 400px;
+  padding: 80px 0;
+
+  div {
+    width: 40px;
+    margin: auto;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+
+// .dropdownSelectedFieldList div {
+//   padding: 6px;
+//   border-top: 1px solid #fafafa;
+// }
+
+.info {
+  p {
+    text-align: center;
+  }
+}
+.owl-carousel {
+  z-index: unset !important;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+  background: #090954 !important;
+  width: 4px !important;
+  height: 4px !important;
+}
+.owl-theme .owl-dots span {
+  width: 4px !important;
+  height: 4px !important;
+  background: rgba(191, 209, 232, 0.5) !important;
+  text-indent: 100% !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}
+
+.owl-dots.disabled {
+  display: block !important;
+}
+
+.owl-prev {
+  position: absolute !important;
+  top: 30% !important;
+  display: block !important;
+  width: 16px;
+  height: 16px;
+  background: url("https://files.y.jewelry/left.svg") no-repeat !important;
+}
+
+.owl-next {
+  position: absolute !important;
+  top: 30% !important;
+  right: 0px !important;
+  display: block !important;
+  width: 16px;
+  height: 16px;
+  background: url("https://files.y.jewelry/right.svg") no-repeat !important;
+}
+
+@media only screen and (max-width: 660px) {
+  .owl-prev {
+    left: -20px !important;
+  }
+
+  .owl-next {
+    right: -40px !important;
+  }
+}
+
+.mat-radio-label {
+  white-space: normal !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  display: none;
+}
+
+.mat-form-field-prefix .mat-icon-button,
+.mat-form-field-suffix .mat-icon-button {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: -0.5em;
+}
+.btnDiv {
+  &.navDiv {
+    overflow: hidden;
+    padding: 0 1em;
+
+    button.play {
+      height: 20px;
+      width: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    button.play.leftNav {
+      background: url(https://files.y.jewelry/assets/img/chevron-circle-left-solid.svg);
+      float: left;
+      background-size: cover;
+    }
+
+    button.play.rightNav {
+      background: url(https://files.y.jewelry/assets/img/chevron-circle-right-solid.svg);
+      float: right;
+      background-size: cover;
+    }
+  }
+}
+.ui-accordion-header {
+  all: unset;
+  font-family: BelweSansLight !important;
+  font-size: 18px !important;
+}
+.ui-widget-content {
+  border: none !important;
+  background: transparent !important;
+  color: #090954 !important;
+  font-family: Apercu !important;
+  padding: 0.5em 0.5em 0.5em 26px !important;
+  height: unset !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+}
+.mat-dialog-container {
+  border-radius: 1.5em !important;
+  background: $background-color-main !important;
+  overflow: hidden !important;
+}
+.bg-white {
+  .mat-dialog-container {
+    border-radius: 10px !important;
+    background: #fff !important;
+  }
+}
+.mat-form-field .mat-select-trigger .mat-select-value .mat-select-value-text {
+  font-family: ApercuLight;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  color: #090954;
+}
+// @import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+// @include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$md-mcgpalette0: (
+  50: #e1e1ea,
+  100: #b5b5cc,
+  200: #8484aa,
+  300: #535387,
+  400: #2e2e6e,
+  500: #090954,
+  600: #08084d,
+  700: #060643,
+  800: #05053a,
+  900: #020229,
+  A100: #6363ff,
+  A200: #3030ff,
+  A400: #0000fc,
+  A700: #0000e3,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
+$md-mcgpalette1: (
+  50: #f7f9fc,
+  100: #ebf1f9,
+  200: #dde8f5,
+  300: #cfdff0,
+  400: #c5d8ed,
+  500: #bfd1e8,
+  600: #b5cce7,
+  700: #acc6e4,
+  800: #a4c0e1,
+  900: #96b5db,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #ffffff,
+  A700: #f7fbff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// $candy-app-primary: mat-palette($md-mcgpalette0);
+// $candy-app-accent: mat-palette($md-mcgpalette1);
+
+// // The warn palette is optional (defaults to red).
+// $candy-app-warn: mat-palette($mat-red);
+
+// // Create the theme object (a Sass map containing all of the palettes).
+// $candy-app-theme: mat-light-theme(
+//   $candy-app-primary,
+//   $candy-app-accent,
+//   $candy-app-warn
+// );
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include angular-material-theme($candy-app-theme);
+
+// @import './shared/layouts_sass/styles';
+// @import './shared/produit_sass/styles';
+
+.flex {
+  display: flex;
+}
+
+.flex-30 {
+  flex: 1 1 100%;
+  max-width: 30%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.items-center {
+  align-items: center;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 3px;
+}
+
+.mat-mini-fab .mat-button-wrapper {
+  line-height: unset !important;
+  padding: unset !important;
+}
+
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #bfd1e8;
+}
+
+.mat-radio-label-content {
+  font-family: Apercu !important;
+  font-size: 14px;
+}
+
+.mat-progress-bar {
+  width: calc(100% - 20px) !important;
+  height: 5px !important;
+  border-radius: 5px !important;
+}
+.mat-progress-bar .mat-progress-bar-element,
+.mat-progress-bar .mat-progress-bar-fill::after {
+  height: 5px !important;
+}
+.paymentsContainer {
+  .mat-radio-outer-circle {
+    border-color: transparent !important;
+    background: white;
+  }
+}
+.addressContainer {
+  .mat-radio-container {
+    position: absolute;
+    margin: -50px -20px;
+  }
+}
+
+.material-icons {
+  font-size: inherit !important;
+}
+
+.mat-chip.mat-standard-chip {
+  background: #ffffff;
+  color: #090954;
+  border: 1px solid #090954;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.searchContainer {
+  .mat-input-element {
+    font-family: Belvue;
+    color: #bbd1ea;
+  }
+
+  .mat-focused {
+    .mat-input-element {
+      color: #090954 !important;
+    }
+  }
+
+  .b-light-blue {
+    border: 1px solid #bbd1ea !important;
+  }
+}
+/*********************TellMeY progress****************************/
+.progress-bar-div {
+  .mat-progress-bar {
+    height: 5px;
+    border-radius: 5px;
+  }
+  .mat-progress-bar-fill::after {
+    background-color: #bfd1e8;
+  }
+  .mat-progress-bar-buffer {
+    background: #ffffff;
+  }
+}
+/*******X**************TellMeY progress******************X**********/
+.mat-radio-button {
+  margin-right: 10px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+:focus {
+  outline: none !important;
+}
+
+.mat-checkbox-frame {
+  border: 1px solid #bfd1e8 !important;
+  box-sizing: border-box !important;
+  border-radius: 3px !important;
+}
+
+.mat-checkbox-inner-container {
+  width: 30px !important;
+  height: 30px !important;
+  background: #fefcfb;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  line-height: 30px;
+}
+
+.mat-chip-list-wrapper {
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 18px !important;
+  margin-bottom: 18px !important;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.ngxImageZoomContainer {
+  width: 100vw !important;
+  height: auto !important;
+}
+
+.mf-modal-iframe.mf-loaded {
+  bottom: 20px !important;
+  right: 70px !important;
+  top: auto !important;
+  left: unset !important;
+  -webkit-transform: unset !important;
+  -ms-transform: unset !important;
+  transform: unset !important;
+}
+
+.cdk-overlay-dark-backdrop {
+  background: none !important;
+}
+
+.bg-logo {
+  width: 50px;
+  height: 50px;
+  //background: url('https://files.y.jewelry/assets/css_sprites.png') -10px -10px !important;
+  background: url("https://files.y.jewelry/assets/img/2020/YLogo.svg");
+}
+
+.ng5-slider .ng5-slider-pointer:after {
+  content: unset !important;
+  display: none !important;
+}
+
+.ng5-slider .ng5-slider-pointer {
+  width: 15px !important;
+  height: 15px !important;
+  top: -5px !important;
+  background-color: #090954 !important;
+}
+
+.ng5-slider .ng5-slider-selection {
+  background: #090954 !important;
+}
+
+.ng5-slider .ng5-slider-bubble {
+  font-family: Apercu !important;
+  color: #090954 !important;
+  font-size: 12px !important;
+}
+
+@media (max-width: 669px) {
+  .ng5-slider.animate .ng5-slider-bubble.ng5-slider-limit {
+    bottom: -40px !important;
+  }
+}
+@media (min-width: 670px) {
+  .ng5-slider.animate .ng5-slider-bubble.ng5-slider-limit {
+    bottom: -20px !important;
+  }
+}
+.mat-card-image {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  margin: 0px !important;
+}
+.mat-card {
+  padding: 0;
+  border-bottom-right-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+.mat-card:not([class*="mat-elevation-z"]) {
+  box-shadow: none !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.mat-accordion {
+  width: 100%;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mat-form-field {
+  text-align: center;
+  font-size: 12 px;
+  font-family: ApercuLight;
+  line-height: unset !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-wrapper {
+  margin: unset !important;
+  padding: unset !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  margin: unset !important;
+  padding: unset !important;
+}
+
+.mat-select {
+  font-family: ApercuLight;
+}
+
+.mat-select-arrow-wrapper {
+  background-image: url(https://files.y.jewelry/assets/matSelectArrow.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  height: 31px;
+}
+
+.mat-form-field-appearance-outline .mat-select-arrow-wrapper {
+  transform: translateY(-15%);
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #bfd1e8;
+}
+
+.mat-form-field-flex {
+  border-radius: 3px !important;
+}
+
+.mat-select-arrow {
+  border-top: 0px solid !important;
+}
+
+.sqr-14 {
+  width: 14px;
+  height: 14px;
+}
+.home-link {
+  font-family: Belvue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.navs {
+  text-transform: capitalize;
+  font-family: ApercuLight;
+  border-radius: 20px;
+  background: #ffffff;
+  overflow: hidden;
+  // overflow-x: visible;
+  height: 30px;
+  position: relative;
+  border: 1px solid rgba(191, 209, 232, 0.5);
+  box-sizing: border-box;
+  //max-width: calc(100% - 20px);
+  //margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  div {
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: "ApercuLight";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0px 10px 0px 10px;
+    color: #bfd1e8;
+    justify-content: center;
+    height: 30px;
+  }
+  .btn {
+    font-family: Apercu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+  }
+
+  .active {
+    background-color: #bfd1e8;
+    border-radius: 20px;
+    color: #090954;
+  }
+  .inactive {
+    background-color: #ffffff;
+    color: #bfd1e8;
+  }
+  .btn-dark-blue {
+    background-color: #090954;
+    color: #bfd1e8;
+    border-radius: 0px 3px 3px 0px;
+  }
+
+  .left {
+    position: sticky;
+    left: 0px;
+    padding: 0px !important;
+  }
+  .rigth {
+    position: sticky;
+    right: 0px;
+    padding: 0px !important;
+  }
+}
+.navs::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+}
+
+.bg-light-blue {
+  background: #bfd1e8;
+}
+
+.bg-light-blue-alpha {
+  background: rgba(191, 209, 232, 0.5);
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.ml-7 {
+  margin-left: 7px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.matForm {
+  background-color: white;
+  border-radius: 3px;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+
+  .mat-form-field-infix {
+    padding-left: 10px !important;
+  }
+
+  .mat-form-field-label {
+    margin-left: 10px;
+    color: #bfd1e8 !important;
+  }
+
+  .mat-icon {
+    color: #bfd1e8 !important;
+    transform: translateY(-6px) !important;
+  }
+}
+
+.rounded-white {
+  background-color: white;
+  border-radius: 3px;
+}
+
+.forward-arrow {
+  color: #090954;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    vertical-align: middle;
+    color: #090954;
+  }
+}
+
+.mb30 {
+  margin-bottom: 30px;
+}
+
+.error {
+  color: red;
+}
+
+.above-arrow {
+  transform: rotate(0deg);
+  color: #090954;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(225deg);
+    vertical-align: middle;
+    color: #090954;
+  }
+}
+
+.down-arrow {
+  transform: rotate(0deg);
+  color: #090954;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    vertical-align: middle;
+    color: #090954;
+  }
+}
+
+.back-arrow {
+  color: #090954;
+
+  &:after {
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    content: "";
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(135deg);
+    vertical-align: middle;
+    color: #090954;
+  }
+}
+
+.mat-radio-label {
+  margin-bottom: 15px;
+}
+
+.mat-radio-label-content {
+  width: 100%;
+}
+
+/*******************************fancyCheckbox****************************************/
+.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+  display: none;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .checked {
+  display: flex;
+}
+
+.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked {
+  display: none;
+}
+.fancy-checkbox input[type="checkbox"]:not(:checked) ~ .unchecked {
+  display: flex;
+}
+.fancy-checkbox .text {
+  height: 30px;
+  line-height: 30px;
+  margin-left: 20px;
+}
+.unchecked-Icon {
+  width: 30px;
+  height: 30px;
+  background: #fefcfb;
+  border: 1px solid #bfd1e8;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.checked-Icon {
+  // background: #FEFCFB;
+  // border: 1px solid #BFD1E8;
+  // box-sizing: border-box;
+  // border-radius: 5px;
+}
+.checked-Icon svg {
+  padding: 6px;
+  background: #fefcfb;
+  border: 1px solid #bfd1e8;
+
+  border-radius: 5px;
+}
+.float-l {
+  float: left;
+}
+
+/*******************************fancyCheckbox****************************************/
+
+.title {
+  font-family: BelweSansLight;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+}
+.subTitle {
+  font-family: BelweSansLight;
+  font-size: 18px;
+  line-height: 20px;
+  margin-bottom: 11px;
+}
+
+.details {
+  font-family: Apercu;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.w-half {
+  width: 50%;
+}
+
+.hr-top {
+  border-top: 1px solid #bfd1e8;
+}
+
+.qty-btn {
+  width: 30px !important;
+}
+
+.mat-expansion-indicator {
+  padding: 10px !important;
+}

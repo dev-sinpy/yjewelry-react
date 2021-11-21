@@ -1,0 +1,250 @@
+@import "/src/styles/stylesConstants.scss";
+
+.btn {
+  height: 30px;
+  width: 42px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  font-family: Apercu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.insta {
+  padding-top: 7%;
+  height: 0;
+  color: #ffffff;
+  text-align: center;
+}
+.bg-netBanking {
+  width: 45px;
+  height: 30px;
+  //background: url('https://files.y.jewelry/assets/css_sprites.png') -70px -80px !important;
+  //background: url('https://files.y.jewelry/assets/img/2020/footer/netbankingicon.svg') !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mat-form {
+  border: 1px solid #090954;
+  box-sizing: border-box;
+  border-radius: 3px 0px 0px 3px;
+  color: #090945;
+  font-family: ApercuLight;
+  text-align: center;
+  height: 30px;
+  > input {
+    border: none;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 969px) {
+  .footerContainer {
+    min-height: unset !important;
+    .mainDiv {
+      padding: 0 10px;
+      > div {
+        margin-bottom: unset !important;
+        max-width: unset !important;
+        width: 100%;
+      }
+      .mat-form {
+        max-width: unset !important;
+        width: 80%;
+      }
+
+      .infoLinks,
+      .legalLinks {
+        min-width: 140px;
+      }
+
+      .payment-icons {
+        max-width: unset !important;
+        width: 100%;
+        div {
+          margin-bottom: 5px;
+          margin-right: 10px;
+        }
+      }
+      .details {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 970px) {
+  .footerContainer {
+    .mainDiv {
+      .infoLinks,
+      .legalLinks {
+        min-width: 180px;
+      }
+    }
+  }
+}
+
+.footerContainer {
+  //margin-top: 50px;
+  max-width: 100vw;
+  color: #090954;
+  font-family: ApercuLight;
+  background: #ffffff;
+  padding: 40px 0px;
+
+  .mainDiv {
+    height: calc(100% - 80px);
+    max-width: 1000px;
+    margin: auto;
+
+    .links {
+      max-width: 100%;
+
+      > div {
+        max-width: 280px;
+      }
+    }
+
+    > div {
+      margin-bottom: 20px;
+      max-width: 280px;
+    }
+
+    .title {
+      font-size: 8px !important;
+      line-height: 10px !important;
+      text-transform: uppercase;
+      margin-top: 13px;
+      margin-bottom: 13px;
+    }
+
+    .details {
+      font-size: 14px;
+      line-height: 20px;
+      min-width: 220px;
+    }
+
+    // .paymentMethods {
+    //   min-width: 170px;
+    // }
+
+    .deliveryDiv {
+      min-width: 190px;
+    }
+
+    .mat-form {
+      max-width: 130px;
+    }
+
+    .icon,
+    .infoLinks > div,
+    .legalLinks > div,
+    .infoLinks > a,
+    .legalLinks > a {
+      cursor: pointer;
+    }
+
+    .infoLinks > a,
+    .infoLinks > div,
+    .legalLinks > div,
+    .legalLinks > a {
+      font-size: 14px;
+      line-height: 30px;
+    }
+
+    .payment-icons {
+      max-width: 200px;
+      div {
+        margin-bottom: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.fg-white {
+  color: #ffffff;
+}
+
+.error {
+  color: #b54747;
+}
+
+.mbr20 {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr10 {
+  margin-bottom: 10px;
+}
+.fnt-13 {
+  font-size: 13px !important;
+}
+.footer-mobile-textbox {
+  background: #ffffff;
+  border: 1px solid #fbf4f1;
+  box-sizing: border-box;
+  border-radius: 5px;
+  width: 100%;
+  height: 30px;
+  margin: 11px auto;
+  text-align: center;
+}
+
+.homeLookBookContainer {
+  width: 100%;
+  height: 300px;
+  background: url("https://files.y.jewelry/homeinsta.webp");
+  background-size: cover;
+  object-fit: fill;
+  background-position: center;
+  cursor: pointer;
+  z-index: 99;
+  position: relative;
+}
+
+@media (max-width: 669px) {
+  .homeLookBookContainer {
+    background: url("https://files.y.jewelry/homeinstamobile.webp");
+  }
+}
+
+.overlay {
+  background: #fbf4f1;
+  mix-blend-mode: multiply;
+}
+
+.insta {
+  padding-top: -7%;
+  height: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.home-link {
+  font-family: Belvue;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ffffff;
+}
