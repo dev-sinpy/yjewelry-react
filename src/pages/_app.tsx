@@ -1,18 +1,18 @@
-import "styles/globals.scss";
-import MainLayout from "layouts/MainLayout/MainLayout";
-import type { AppProps } from "next/app";
-import { useHydrate } from "store";
-import { StoreProvider } from "store/storeProvider";
+import MainLayout from 'layouts/MainLayout/MainLayout';
+import type { AppProps } from 'next/app';
+import 'styles/globals.scss';
+import { SWRConfig } from 'swr';
+// import { StoreProvider } from "store/storeProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const store = useHydrate(pageProps.initialZustandState);
+  // const store = useHydrate(pageProps.store);
 
   return (
-    <StoreProvider store={store}>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </StoreProvider>
+    // <StoreProvider createStore={store}>
+    <MainLayout>
+      <Component {...pageProps} />
+    </MainLayout>
+    // </StoreProvider>
   );
 }
 

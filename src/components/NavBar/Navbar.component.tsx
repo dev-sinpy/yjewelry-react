@@ -1,44 +1,45 @@
-import styles from "./Navbar.module.scss";
-import Link from "next/link";
-import Image from "next/image";
-import { IMenuItem } from "./interfaces/menuitem.interface";
-import { initializeStore } from "store";
-import { useStore } from "store/storeProvider";
+import styles from './Navbar.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+import { IMenuItem } from './interfaces/menuitem.interface';
+import { initializeStore } from 'store';
+// import { use0Store } from "store/storeProvider";
+import { useEffect } from 'react';
+import { useLocationListing } from 'hooks/useHomeNav';
 
 const LEFT_MENU_LINKS: IMenuItem[] = [
   {
-    href: "/",
-    title: "Charms",
+    href: '/',
+    title: 'Charms',
   },
   {
-    href: "/",
-    title: "Chains",
+    href: '/',
+    title: 'Chains',
   },
   {
-    href: "/",
-    title: "Sets",
+    href: '/',
+    title: 'Sets',
   },
 ];
 
 const RIGHT_MENU_LINKS = [
   {
-    href: "/",
-    title: "The art of giving",
+    href: '/',
+    title: 'The art of giving',
   },
   {
-    href: "/",
-    title: "Create your own sets",
+    href: '/',
+    title: 'Create your own sets',
   },
   {
-    href: "/",
-    title: "Tell me Y",
+    href: '/',
+    title: 'Tell me Y',
   },
 ];
 
-export default function Navbar() {
-  const { initSettings } = useStore((state: any) => state.initSettings);
+export default function Navbar(props: any) {
+  const { navCategories, isError, isLoading } = useLocationListing();
 
-  console.log(initSettings);
   return (
     <div>
       <div
