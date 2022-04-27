@@ -3,4 +3,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .reviewBox {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .ratingStar {
+      color: #090954;
+    }
+  }
+
+  .testimonialText {
+  }
+}
+
+.testimonialSlider {
+  background-color: #ffffff;
 }

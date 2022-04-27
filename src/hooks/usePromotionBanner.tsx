@@ -1,22 +1,24 @@
 import { AxiosRequestConfig } from 'axios';
 import fetcher from 'lib/fetcher';
 import useSWR from 'swr';
-import { HomeSubCategoriesRootInterface } from './interfaces/nav-categories.interface';
+import { PromotionBannerInterface } from './interfaces/promotion-banner.interface';
 
 const RequestConfig: AxiosRequestConfig = {
-  url: '/api/navSubCategories',
+  url: '/api/promotion/banner',
   method: 'GET',
 };
 
-export function useHomeNavCategories() {
-  const { data, error } = useSWR<HomeSubCategoriesRootInterface>(
+const usePromotionBanner = () => {
+  const { data, error } = useSWR<PromotionBannerInterface>(
     [RequestConfig.url, RequestConfig],
     fetcher
   );
 
   return {
-    navCategories: data?.homeSubCategories,
+    promotionBanner: data,
     isLoading: !error && !data,
     isError: error,
   };
-}
+};
+
+export default usePromotionBanner;

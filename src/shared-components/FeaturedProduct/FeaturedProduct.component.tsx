@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from './FeaturedProduct.module.scss';
-import Image from 'next/image';
 
 const FeaturedProduct = () => {
   return (
-    <div className={`${styles['lookbook-container']}`}>
+    <div className={`${styles['lookbook-container']} mt-8`}>
       <img
         className={`${styles['lookbook-cover']}`}
         src="https://files.y.jewelry/homelookbook.webp"

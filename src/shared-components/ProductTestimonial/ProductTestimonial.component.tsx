@@ -3,6 +3,7 @@ import Slider from 'components/Slider/Slider.component';
 import fetcher from 'lib/fetcher';
 import useSWR from 'swr';
 import styles from './ProductTestimonial.module.scss';
+import StarIcon from '@mui/icons-material/Star';
 
 interface TestimonialRootObject {
   testimonials: Testimonial[];
@@ -19,13 +20,29 @@ interface Testimonial {
   createdOnDate: string;
 }
 
-const ProductTestimonial = ({ testimonial, customer }: any) => {
+const ProductTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length > maxLength) {
+      return `${text.substring(0, maxLength)}...`;
+    }
+    return text;
+  };
+
   return (
-    <Container className={`${styles['container']}`}>
-      <Card sx={{ width: '50%' }}>
-        <CardContent>
-          <Typography>{testimonial}</Typography>
-          <Typography>{customer}</Typography>
+    <Container className={`${styles.container}`}>
+      <Card elevation={0} sx={{ width: '50%', height: '200px' }}>
+        <CardContent className={styles.reviewBox}>
+          <div>
+            {Array(testimonial.review_number)
+              .fill(0)
+              .map((_, index) => (
+                <StarIcon className={styles.ratingStar} key={index} />
+              ))}
+          </div>
+          <Typography align="center" className={styles.testimonialText}>
+            {`"${truncateText(testimonial.review_text, 200)}"`}
+          </Typography>
+          <Typography>{`${testimonial.customer_firstname} ${testimonial.customer_lastname}`}</Typography>
         </CardContent>
       </Card>
     </Container>
@@ -38,21 +55,21 @@ const ProductTestimonialSlider = () => {
     fetcher
   );
 
-  const slides = data?.testimonials.map((slide) => (
+  const slides = data?.testimonials.map((testimonial) => (
     <ProductTestimonial
-      key={slide.createdOnDate}
-      testimonial={slide.review_text}
-      customer={`${slide.customer_firstname} ${slide.customer_lastname}`}
+      key={testimonial.createdOnDate}
+      testimonial={testimonial}
     />
   ));
 
   return (
     <Slider
+      className={styles.testimonialSlider}
       options={{
-        autoplay: true,
-        interval: 3000,
-        type: 'loop',
-        resetProgress: false,
+        autoplay: false,
+        // interval: 3000,
+        // type: 'loop',
+        // resetProgress: false,
         perPage: 1,
       }}
       ariaLabel="testimonial-banner"

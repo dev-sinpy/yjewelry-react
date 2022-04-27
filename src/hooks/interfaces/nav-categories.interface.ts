@@ -1,28 +1,22 @@
-export interface HomeSubCategoriesRoot {
-  homeSubCategories: HomeSubCategories;
+export interface HomeSubCategoriesRootInterface {
+  homeSubCategories: HomeSubCategoriesInterface;
 }
 
-export interface HomeSubCategories {
-  sets: Set[];
-  chains: Chain[];
-  charms: Chain[];
+export interface HomeSubCategoriesInterface {
+  sets: CategoryInterface[];
+  chains: CategoryInterface[];
+  charms: CategoryInterface[];
 }
 
-interface Chain {
+export interface CategoryInterface {
   name: string;
   se_name: string;
-  image: Image;
+  image?: ImageInterface;
 }
 
-interface Image {
+interface ImageInterface {
   src: string;
   alt?: any;
   title?: any;
   attachment?: any;
-}
-
-interface Set {
-  name: string;
-  se_name: string;
-  image?: any;
 }

@@ -1,7 +1,7 @@
+import { GlobalConfigProvider } from 'contexts/setting.context';
 import MainLayout from 'layouts/MainLayout/MainLayout';
 import type { AppProps } from 'next/app';
 import 'styles/globals.scss';
-import { SWRConfig } from 'swr';
 // import { StoreProvider } from "store/storeProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -9,10 +9,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     // <StoreProvider createStore={store}>
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
-    // </StoreProvider>
+    <GlobalConfigProvider>
+      <MainLayout>
+        <Component {...pageProps} />
+      </MainLayout>
+    </GlobalConfigProvider>
   );
 }
 

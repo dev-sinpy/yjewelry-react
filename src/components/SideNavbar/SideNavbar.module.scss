@@ -1,0 +1,45 @@
+.borderBlue {
+  border: 1px solid #bfd1e8;
+}
+
+.promotionBanner {
+  min-height: 150px;
+  height: 13vw;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+
+  .promotion-image {
+    align-self: center;
+    max-width: 101px;
+    height: 49px;
+    margin-left: -20%;
+  }
+
+  .btn-cta {
+    // align-self: center;
+    font-family: ApercuLight;
+    background-color: transparent;
+    color: #090954;
+    border-radius: 3px;
+    height: 40px;
+    text-transform: uppercase;
+    border: 1px solid #090954;
+    box-sizing: border-box;
+    padding: 12px;
+    max-width: 200px;
+    margin-left: 20px;
+    // margin-left: -30%;
+  }
+}
+
+.searchInput {
+}
+
+.searchInput::placeholder {
+  color: #090954;
+  font-family: ApercuLight;
+}

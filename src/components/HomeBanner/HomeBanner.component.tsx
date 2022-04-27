@@ -3,6 +3,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  Container,
   Typography,
 } from '@mui/material';
 
@@ -38,15 +39,23 @@ const HomeBanner = ({
         image={url}
         alt={alt}
       />
-      <CardContent>
-        <Typography align="center" gutterBottom variant="h5" component="div">
-          {title}
-        </Typography>
-        <Typography align="center" variant="body2" color="text.secondary">
-          {description}
-        </Typography>
+      <CardContent className="h-36">
+        <Container className="text-center">
+          <Typography
+            className="text-3xl"
+            align="center"
+            variant="belweLight"
+            component="div"
+            gutterBottom
+          >
+            {title}
+          </Typography>
+          <Typography variant="belweLight" color="secondary" align="center">
+            {description}
+          </Typography>
+        </Container>
       </CardContent>
-      <CardActions sx={{ justifyContent: 'center' }}>
+      <CardActions sx={{ justifyContent: 'center', alignItems: 'end' }}>
         <button
           className="btn-dark"
           onClick={() => {
@@ -80,10 +89,10 @@ const HomeBannerSlider = () => {
       <Slider
         options={{
           gap: 30,
-          autoplay: true,
-          interval: 3000,
-          type: 'loop',
-          resetProgress: false,
+          // autoplay: true,
+          // interval: 3000,
+          // type: 'loop',
+          // resetProgress: false,
         }}
         ariaLabel="banner"
         slides={slides || []}

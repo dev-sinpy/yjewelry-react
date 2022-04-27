@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import fetcher from 'lib/fetcher';
 import { useState } from 'react';
 import Thumbnail from 'shared-components/Thumbnail/Thumbnail.component';
@@ -15,12 +15,15 @@ const TrendingProducts = () => {
   const [selectedCategory, setSelectedCategory] = useState(1);
 
   return (
-    <div>
-      <Typography className={`${styles['header']}`}>trending now</Typography>
-      <div className={styles['product-list']}>
+    <Box className="flex flex-col items-center">
+      <Typography variant="belweLight" className="text-3xl">
+        trending now
+      </Typography>
+
+      <div className="flex flex-wrap justify-around">
         {data?.productData[selectedCategory] &&
           data?.productData[selectedCategory].products.map((product) => (
-            <div key={product.id} className={styles['product-thumbnail']}>
+            <div key={product.id} className={styles.productThumbnail}>
               <Thumbnail
                 title={product.name}
                 description={product.price_model.price}
@@ -32,7 +35,10 @@ const TrendingProducts = () => {
             </div>
           ))}
       </div>
-    </div>
+      <button className={`btn-light ${styles.btnCta}`}>
+        Discover All Charms
+      </button>
+    </Box>
   );
 };
 
