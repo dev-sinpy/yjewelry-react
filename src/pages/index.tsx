@@ -3,12 +3,14 @@ import { SWRConfig } from 'swr';
 import HomeComponent from './Home/Home.component';
 
 export async function getStaticProps() {
-  const resp = await axiosClient.get('/api/nivoslider');
+  const bannersResp = await axiosClient.get('/api/nivoslider');
+  const subCatsResp = await axiosClient.get('/api/navSubCategories');
 
   return {
     props: {
       fallback: {
-        '/api/nivoslider': resp.data,
+        '/api/nivoslider': bannersResp.data,
+        '/api/navSubCategories': subCatsResp.data,
       },
     },
   };

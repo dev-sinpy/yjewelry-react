@@ -1,11 +1,16 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { Box, Drawer, List, ListItem, ListItemIcon, Toolbar } from '@mui/material';
-import { CategoryInterface, HomeSubCategoriesInterface } from 'hooks/interfaces/nav-categories.interface';
+import {
+  CategoryInterface,
+  HomeSubCategoriesInterface,
+  HomeSubCategoriesRootInterface,
+} from 'hooks/interfaces/nav-categories.interface';
 import useGlobalConfig from 'hooks/useGlobalConfig';
-import { useHomeNavCategories } from 'hooks/useHomeNav';
+import fetcher from 'lib/fetcher';
 import { useMemo } from 'react';
 import NavListView, { MenuItemInterface } from 'shared-components/NavListView/NavListView.component';
 import PromotionBanner from 'shared-components/PromotionalBanner/PromotionalBanner.component';
+import useSWR from 'swr';
 import styles from './SideNavbar.module.scss';
 
 const SideNavItems = [
@@ -26,7 +31,6 @@ function buildNavItems(categories: HomeSubCategoriesInterface): MenuItemInterfac
       category.toLowerCase() in categories
         ? ((categories as any)[category.toLowerCase()] as CategoryInterface[])
         : null;
-    // SideNavItems.findIndex((item) => item.toLowerCase() === category.toLowerCase());
 
     let navItem: MenuItemInterface;
 
@@ -59,13 +63,13 @@ function buildNavItems(categories: HomeSubCategoriesInterface): MenuItemInterfac
 
 export default function SideNav() {
   const { openSidebar, toggleSidebar } = useGlobalConfig();
-  const { navCategories, isLoading } = useHomeNavCategories();
+  const { data: navCategories } = useSWR<HomeSubCategoriesRootInterface>('/api/navSubCategories', fetcher);
 
   console.log('SideNav navCategories', navCategories);
 
   const navItems = useMemo(() => {
     if (navCategories !== undefined) {
-      return buildNavItems(navCategories);
+      return buildNavItems(navCategories.homeSubCategories);
     }
     return [];
   }, [navCategories]);

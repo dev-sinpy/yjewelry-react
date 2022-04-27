@@ -1,9 +1,4 @@
-import {
-  Splide,
-  SplideProps,
-  SplideSlide,
-  SplideTrack,
-} from '@splidejs/react-splide';
+import { Splide, SplideProps, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css/core';
 import React from 'react';
 
@@ -13,13 +8,9 @@ interface SliderOptions extends SplideProps {
   slides: Array<any>;
 }
 
-const Slider: React.FC<SliderOptions> = ({
-  ariaLabel,
-  className,
-  options,
-  slides,
-}) => {
+const Slider: React.FC<SliderOptions> = ({ ariaLabel, className, options, slides }) => {
   return (
+    // @ts-ignore
     <Splide
       hasTrack={false}
       tag="section"
@@ -32,12 +23,7 @@ const Slider: React.FC<SliderOptions> = ({
         ...options,
       }}
     >
-      <SplideTrack>
-        {slides &&
-          slides.map((slide, idx) => (
-            <SplideSlide key={idx}>{slide}</SplideSlide>
-          ))}
-      </SplideTrack>
+      <SplideTrack>{slides && slides.map((slide, idx) => <SplideSlide key={idx}>{slide}</SplideSlide>)}</SplideTrack>
       {/* <div className="splide__arrows">
           <button className="splide__arrow splide__arrow--prev">Prev</button>
           <button className="splide__arrow splide__arrow--next">Next</button>

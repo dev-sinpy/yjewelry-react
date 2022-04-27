@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Card, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 
 import Slider from 'components/Slider/Slider.component';
 import fetcher from 'lib/fetcher';
@@ -22,32 +15,13 @@ interface BannerOptions {
   buttonLink?: string;
 }
 
-const HomeBanner = ({
-  alt,
-  title,
-  description,
-  url,
-  buttonText,
-  buttonLink,
-}: BannerOptions) => {
+const HomeBanner = ({ alt, title, description, url, buttonText, buttonLink }: BannerOptions) => {
   return (
     <Card sx={{ height: 700 }}>
-      <CardMedia
-        className={styles['banner-cover']}
-        component="img"
-        height="480"
-        image={url}
-        alt={alt}
-      />
+      <CardMedia className={styles['banner-cover']} component="img" height="480" image={url} alt={alt} />
       <CardContent className="h-36">
         <Container className="text-center">
-          <Typography
-            className="text-3xl"
-            align="center"
-            variant="belweLight"
-            component="div"
-            gutterBottom
-          >
+          <Typography className="text-3xl" align="center" variant="belweLight" component="div" gutterBottom>
             {title}
           </Typography>
           <Typography variant="belweLight" color="secondary" align="center">

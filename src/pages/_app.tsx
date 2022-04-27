@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     // <StoreProvider createStore={store}>
     <GlobalConfigProvider>
       <MainLayout>
+        {/* @ts-ignore */}
         <Component {...pageProps} />
       </MainLayout>
     </GlobalConfigProvider>
