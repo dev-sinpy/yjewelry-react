@@ -1,6 +1,6 @@
 import { Box, Button, Container, styled, Tab, Tabs, Typography } from '@mui/material';
 import fetcher from 'lib/fetcher';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Thumbnail from 'shared-components/Thumbnail/Thumbnail.component';
 import useSWR from 'swr';
 import { ProductCategory, ProductDataRoot } from './interfaces/product.interface';

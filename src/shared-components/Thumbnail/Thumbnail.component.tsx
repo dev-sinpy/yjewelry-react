@@ -1,4 +1,6 @@
 import { Card, CardContent, CardMedia, SxProps, Theme, Typography } from '@mui/material';
+import Image from 'next/image';
+import { Ref } from 'react';
 
 import styles from './Thumbnail.module.scss';
 
@@ -7,7 +9,7 @@ interface ThumbnailOptions {
   alt?: string;
   title?: string;
   description?: string;
-  imageUrl?: string;
+  imageUrl: string;
   sx?: SxProps<Theme>;
   thumbnailWidth?: number;
   thumbnailHeight?: number;
@@ -25,14 +27,15 @@ const Thumbnail = ({
 }: ThumbnailOptions) => {
   return (
     <Card elevation={0} sx={{ ...sx }}>
-      <CardMedia
-        className={`${styles['banner-cover']} ${className}`}
-        component="img"
-        height={thumbnailHeight}
-        width={thumbnailWidth}
-        image={imageUrl}
-        alt={alt}
-      />
+      <CardMedia className={`${styles['banner-cover']} ${className}`}>
+        <Image
+          src={imageUrl}
+          alt={alt}
+          height={thumbnailHeight || 200}
+          width={thumbnailWidth || 200}
+          lazyBoundary="50px"
+        />
+      </CardMedia>
       <CardContent>
         <Typography className={`${styles['thumbnail-title']}`} gutterBottom variant="h5" component="div">
           {title}

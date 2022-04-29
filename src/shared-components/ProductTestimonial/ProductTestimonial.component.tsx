@@ -29,7 +29,10 @@ const ProductTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
   };
 
   return (
-    <Container className={`${styles.container}`}>
+    <Container
+      className={`${styles.container}`}
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
+    >
       <Card elevation={0} sx={{ width: '50%', height: '200px' }}>
         <CardContent className={styles.reviewBox}>
           <div>
@@ -50,16 +53,10 @@ const ProductTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
 };
 
 const ProductTestimonialSlider = () => {
-  const { data } = useSWR<TestimonialRootObject>(
-    '/api/getTestimoniesReview',
-    fetcher
-  );
+  const { data } = useSWR<TestimonialRootObject>('/api/getTestimoniesReview', fetcher);
 
   const slides = data?.testimonials.map((testimonial) => (
-    <ProductTestimonial
-      key={testimonial.createdOnDate}
-      testimonial={testimonial}
-    />
+    <ProductTestimonial key={testimonial.createdOnDate} testimonial={testimonial} />
   ));
 
   return (

@@ -1,5 +1,6 @@
-import { Box, Button, Container, Drawer, List, Stack, Toolbar, Typography } from '@mui/material';
+import { Button, Container, Drawer, Stack, Toolbar, Typography } from '@mui/material';
 import useGlobalConfig from 'hooks/useGlobalConfig';
+import Image from 'next/image';
 
 const CartDrawer = () => {
   const { isCartOpen: openCart, toggleCart } = useGlobalConfig();
@@ -22,7 +23,7 @@ const CartDrawer = () => {
             your cart is empty
           </Typography>
 
-          <img className="w-96 h-72" alt="Empty Cart" src="https://files.y.jewelry/assets/img/emptyCart.webp"></img>
+          <Image width={380} height={280} alt="Empty Cart" src="https://files.y.jewelry/assets/img/emptyCart.webp" />
 
           <Button className="w-2/4" disableElevation variant="contained" color="secondary">
             <Typography variant="apercu" align="center">

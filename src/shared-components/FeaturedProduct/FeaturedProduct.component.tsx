@@ -11,6 +11,7 @@ const FeaturedProduct = () => {
         alt="lookbook"
         width="100%"
         height={300}
+        loading="lazy"
       />
       <div className={`${styles.lookbookContent}`}>
         <svg
