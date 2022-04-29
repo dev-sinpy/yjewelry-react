@@ -1,4 +1,4 @@
-import { Card, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, CardMedia, Container, Typography } from '@mui/material';
 
 import Slider from 'components/Slider/Slider.component';
 import fetcher from 'lib/fetcher';
@@ -30,14 +30,19 @@ const HomeBanner = ({ alt, title, description, url, buttonText, buttonLink }: Ba
         </Container>
       </CardContent>
       <CardActions sx={{ justifyContent: 'center', alignItems: 'end' }}>
-        <button
+        <Button disableRipple color="secondary" variant="contained" disableElevation>
+          <Typography variant="apercu" color="primary">
+            {buttonText}
+          </Typography>
+        </Button>
+        {/* <button
           className="btn-dark"
           onClick={() => {
             // LearnMore(slide.buttonLink);
           }}
         >
-          <span className="btn-text">{buttonText}</span>
-        </button>
+          <span className="btn-text"></span>
+        </button> */}
       </CardActions>
     </Card>
   );
@@ -63,10 +68,15 @@ const HomeBannerSlider = () => {
       <Slider
         options={{
           gap: 30,
-          // autoplay: true,
-          // interval: 3000,
-          // type: 'loop',
-          // resetProgress: false,
+          type: 'loop',
+          autoplay: true,
+          interval: 3000,
+          breakpoints: {
+            980: {
+              perPage: 1,
+              // height: '400px',
+            },
+          },
         }}
         ariaLabel="banner"
         slides={slides || []}

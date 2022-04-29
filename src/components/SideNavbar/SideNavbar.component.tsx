@@ -62,10 +62,8 @@ function buildNavItems(categories: HomeSubCategoriesInterface): MenuItemInterfac
 }
 
 export default function SideNav() {
-  const { openSidebar, toggleSidebar } = useGlobalConfig();
+  const { isSidebarOpen: openSidebar, toggleSidebar } = useGlobalConfig();
   const { data: navCategories } = useSWR<HomeSubCategoriesRootInterface>('/api/navSubCategories', fetcher);
-
-  console.log('SideNav navCategories', navCategories);
 
   const navItems = useMemo(() => {
     if (navCategories !== undefined) {
@@ -103,7 +101,11 @@ export default function SideNav() {
               <ListItemIcon>
                 <SearchIcon color="secondary" />
               </ListItemIcon>
-              <input type="text" className={`${styles.searchInput} w-100`} placeholder="Tap to search on the website" />
+              <input
+                type="text"
+                className="w-100 border-none focus:outline-none"
+                placeholder="Tap to search on the website"
+              />
             </ListItem>
 
             <ListItem disablePadding>

@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  SxProps,
-  Theme,
-  Typography,
-} from '@mui/material';
+import { Card, CardContent, CardMedia, SxProps, Theme, Typography } from '@mui/material';
 
 import styles from './Thumbnail.module.scss';
 
@@ -41,17 +34,10 @@ const Thumbnail = ({
         alt={alt}
       />
       <CardContent>
-        <Typography
-          className={`${styles['thumbnail-title']}`}
-          gutterBottom
-          variant="h5"
-          component="div"
-        >
+        <Typography className={`${styles['thumbnail-title']}`} gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography className={`${styles['thumbnail-description']}`}>
-          {description}
-        </Typography>
+        <Typography className={`${styles['thumbnail-description']}`}>{description}</Typography>
       </CardContent>
     </Card>
   );

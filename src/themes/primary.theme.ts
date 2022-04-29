@@ -24,6 +24,10 @@ export const theme = createTheme({
     text: {
       primary: '#090954',
     },
+    // background: {
+    //   default: '#ffffff',
+    //   paper: '#fcf4f0',
+    // },
   },
   typography: {
     apercu: {

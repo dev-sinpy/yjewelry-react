@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Button, Typography } from '@mui/material';
 import styles from './FeaturedProduct.module.scss';
 
 const FeaturedProduct = () => {
@@ -11,7 +12,7 @@ const FeaturedProduct = () => {
         width="100%"
         height={300}
       />
-      <div className={`${styles['lookbook-content']}`}>
+      <div className={`${styles.lookbookContent}`}>
         <svg
           className="img2"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +62,9 @@ const FeaturedProduct = () => {
             fill="white"
           ></path>
         </svg>
-        <div className={`${styles['lookbook-text']}`}>
-          <a className="btn-dark">Discover our Lookbook</a>
-        </div>
+        <Button variant="contained" color="secondary" disableElevation>
+          <Typography variant="apercu">Discover our Lookbook</Typography>
+        </Button>
       </div>
     </div>
   );

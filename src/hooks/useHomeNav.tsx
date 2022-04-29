@@ -1,7 +1,7 @@
 import { AxiosRequestConfig } from 'axios';
 import fetcher from 'lib/fetcher';
 import useSWR from 'swr';
-import { HomeSubCategoriesRootInterface } from './interfaces/nav-categories.interface';
+import { HomeSubCategoriesInterface, HomeSubCategoriesRootInterface } from './interfaces/nav-categories.interface';
 
 const RequestConfig: AxiosRequestConfig = {
   url: '/api/navSubCategories',
@@ -9,13 +9,10 @@ const RequestConfig: AxiosRequestConfig = {
 };
 
 export function useHomeNavCategories() {
-  const { data, error } = useSWR<HomeSubCategoriesRootInterface>(
-    [RequestConfig.url, RequestConfig],
-    fetcher
-  );
+  const { data, error } = useSWR<HomeSubCategoriesRootInterface>([RequestConfig.url, RequestConfig], fetcher);
 
   return {
-    navCategories: data?.homeSubCategories,
+    navCategories: data?.homeSubCategories as HomeSubCategoriesInterface | undefined,
     isLoading: !error && !data,
     isError: error,
   };
